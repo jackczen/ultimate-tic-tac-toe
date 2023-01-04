@@ -16,32 +16,35 @@ If the `HumanAgent` type is specified, the graphical interface will be displayed
 ### MiniMaxAgent
 Each `MiniMaxAgent` has an [evaluation functions](https://en.wikipedia.org/wiki/Evaluation_function) and a search depth. The evaluation function for Player X can be specified by the option `--xe`, and the evaluation function for Player O can be specified by the option `--oe`. The currently supported evaluation functions are
 ```
-count_wins                  Sums the values of terminal sub-boards, where X wins are valued as +1, O wins are valued 
-                            as -1, and ties are valued as 0.
+count_wins                  Sums the values of terminal sub-boards, where X wins are valued as 
+                            +1, O wins are valued as -1, and ties are valued as 0.
 
-cell_weight_evaluation      Computes a weighted sum of terminal sub-boards; each sub-board is weighted by the number 
-                            of possible wins that they can contribute to (for instance, the middle sub-board has a 
-                            weight of 4, since it can contribute to winning once vertically, winning once horizontally,
-                            and winning twice diagonally); X wins are valued as +1, O wins are valued as -1, and ties 
-                            are valued as 0.
+cell_weight_evaluation      Computes a weighted sum of terminal sub-boards; each sub-board is 
+                            weighted by the number of possible wins that they can contribute to 
+                            (for instance, the middle sub-board has a weight of 4, since it 
+                            can contribute to winning once vertically, winning once 
+                            horizontally,and winning twice diagonally); X wins are valued as 
+                            +1, O wins are valued as -1, and ties are valued as 0.
 
-near_wins                   Sums the number of “near-wins,” instances where two of the three necessary pieces are 
-                            placed to win, in the large board; X near-wins are weighted as +1, and O near-wins are 
-                            weighted as -1.
+near_wins                   Sums the number of “near-wins,” instances where two of the three 
+                            necessary pieces are placed to win, in the large board; X 
+                            near-wins are weighted as +1, and O near-wins are weighted as -1.
 
-nested_near_wins            Sums the computation of near_wins on both the large board and each individual sub-board; 
-                            near-wins in the sub-boards are weighted such that, if every sub-board has the maximum 
-                            number of near-wins (6), the total sum is weighted less than one near-win on the large 
+nested_near_wins            Sums the computation of near_wins on both the large board and 
+                            each individual sub-board; near-wins in the sub-boards are weighted 
+                            such that, if every sub-board has the maximum number of near-wins 
+                            (6), the total sum is weighted less than one near-win on the large 
                             board.
 
-shallow_simple_evaluation   Sums the number of “near-wins” and “semi-near-wins,” defined as one piece in line with 
-                            two empty cells, in the large board; near-wins are valued ten times more than 
-                            semi-near-wins, and each is multiplied by +1 if it belongs to X, -1 if it belongs to O.
+shallow_simple_evaluation   Sums the number of “near-wins” and “semi-near-wins,” defined as one
+                            piece in line with two empty cells, in the large board; near-wins 
+                            are valued ten times more than semi-near-wins, and each is multiplied 
+                            by +1 if it belongs to X, -1 if it belongs to O.
 
-deep_simple_evaluation      Sums the “shallow_simple_evaluation” executed on the large board and all non-terminal 
-                            sub-boards. Near-wins in the sub-boards are weighted such that, if every sub-board has 
-                            the maximum number of near-wins (6), the total sum is weighted less than one near-win on 
-                            the large board.
+deep_simple_evaluation      Sums the “shallow_simple_evaluation” executed on the large board and 
+                            all non-terminal sub-boards. Near-wins in the sub-boards are weighted 
+                            such that, if every sub-board has the maximum number of near-wins (6), 
+                            the total sum is weighted less than one near-win on the large board.
 
 zero                        Returns 0.
 ```
