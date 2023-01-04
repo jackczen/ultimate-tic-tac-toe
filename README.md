@@ -41,8 +41,8 @@ shallow_simple_evaluation   Sums the number of “near-wins” and “semi-near-
                             are valued ten times more than semi-near-wins, and each is 
                             multiplied by +1 if it belongs to X, -1 if it belongs to O.
 
-deep_simple_evaluation      Sums the “shallow_simple_evaluation” executed on the large board and 
-                            all non-terminal sub-boards. Near-wins in the sub-boards are 
+deep_simple_evaluation      Sums the “shallow_simple_evaluation” executed on the large board 
+                            and all non-terminal sub-boards. Near-wins in the sub-boards are 
                             weighted such that, if every sub-board has the maximum number of 
                             near-wins (6), the total sum is weighted less than one near-win on 
                             the large board.
