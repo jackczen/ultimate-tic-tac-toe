@@ -13,6 +13,8 @@ To specify the agent type of Player X, use the option `-x`. Likewise, use the op
 
 If the `HumanAgent` type is specified, the graphical interface will be displayed automatically so that the user can make moves. However, to visualize a game between any two agents, use the flag `-g`.
 
+To run simulate several games successively, use the option `-n`.
+
 ### MiniMaxAgent
 Each `MiniMaxAgent` has an [evaluation functions](https://en.wikipedia.org/wiki/Evaluation_function) and a search depth. The evaluation function for Player X can be specified by the option `--xe`, and the evaluation function for Player O can be specified by the option `--oe`. The currently supported evaluation functions are
 ```
