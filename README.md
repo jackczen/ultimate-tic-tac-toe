@@ -9,14 +9,14 @@ To run the primary script, execute the command
 ```
 python game.py
 ```
-To specify the agent type of Player X, use the option `-x`. Likewise, use the option `-o` to specify the agent type of Player O. Currently, the supported agent types are `RandomAgent`, `HumanAgent`, and `MiniMaxAgent`.
+To specify the agent type of Player X, use the option `-x <TYPE>`. Likewise, use the option `-o <TYPE>` to specify the agent type of Player O. Currently, the supported agent types are `RandomAgent`, `HumanAgent`, and `MiniMaxAgent`.
 
 If the `HumanAgent` type is specified, the graphical interface will be displayed automatically so that the user can make moves. However, to visualize a game between any two agents, use the flag `-g`.
 
-To run simulate several games successively, use the option `-n`.
+To run simulate several games successively, use the option `-n <INTEGER>`.
 
 ### MiniMaxAgent
-Each `MiniMaxAgent` has an [evaluation functions](https://en.wikipedia.org/wiki/Evaluation_function) and a search depth. The evaluation function for Player X can be specified by the option `--xe`, and the evaluation function for Player O can be specified by the option `--oe`. The currently supported evaluation functions are
+Each `MiniMaxAgent` has an [evaluation functions](https://en.wikipedia.org/wiki/Evaluation_function) and a search depth. The evaluation function for Player X can be specified by the option `--xe <NAME>`, and the evaluation function for Player O can be specified by the option `--oe <NAME>`. The currently supported evaluation functions are
 ```
 count_wins                  Sums the values of terminal sub-boards, where X wins are valued as 
                             +1, O wins are valued as -1, and ties are valued as 0.
@@ -52,7 +52,7 @@ deep_simple_evaluation      Sums the “shallow_simple_evaluation” executed on
 zero                        Returns 0.
 ```
 
-To specify the search depth, use the option `--xd` for Player X and `--od` for Player O.
+To specify the search depth, use the option `--xd <INTEGER>` for Player X and `--od <INTEGER>` for Player O.
 
 ## Extension
 ### Evaluation Functions
